@@ -132,7 +132,7 @@ func (a *ArakNet) HandleConnection(conn net.Conn) {
 }
 
 //AuthorizePeer checks if peer has the secret key to join a network given by name @Param network
-//and then add this peer to the network or return error if the secret is incorrect of network does not exists
+//and then add this peer to the network or return error if the secret is incorrect or network does not exists
 func (a *ArakNet) AuthorizePeer(network, secret string, peer *Peer) error {
 
 	a.Lock()
@@ -171,8 +171,6 @@ func (a *ArakNet) CreateNetwork(conn net.Conn, message *Message) {
 	//add network creator to peers
 	network.AddPeer(peer)
 	a.Networks[message.Network] = network
-
-	fmt.Println("Network created!")
 }
 
 //SendMessage - Send message to all peers in a network
