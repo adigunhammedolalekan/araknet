@@ -11,24 +11,24 @@ import (
 type Network struct {
 
 	//The network name
-	Name     string
+	Name string
 
 	//Secret key. Will be used to encrypt all outgoing messages
-	Secret   string
+	Secret string
 
 	//Connected peers
-	Peers    []*Peer
+	Peers []*Peer
 	//Uses to encrypt outgoing messages
-	enc      *Encryptor
+	enc *Encryptor
 }
 
 //NewNetwork creates a new Network instance
 func NewNetwork(name, secret string) *Network {
 
 	return &Network{
-		Name:     name,
-		Secret:   secret,
-		enc:      NewEncryptor(secret),
+		Name:   name,
+		Secret: secret,
+		enc:    NewEncryptor(secret),
 	}
 }
 

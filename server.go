@@ -21,16 +21,16 @@ var (
 //- TYPE_CREATE_NETWORK -> Command sent by peers to create a network
 //
 type Message struct {
-	Type    string      `json:"type"`
+	Type string `json:"type"`
 
 	//Network name
-	Network string      `json:"network"`
+	Network string `json:"network"`
 
 	//Name of the peer that sent this message
-	Name    string      `json:"name"`
+	Name string `json:"name"`
 
 	//Content of the message
-	Data    interface{} `json:"data"`
+	Data interface{} `json:"data"`
 
 	Secret string `json:"secret"`
 }
@@ -59,7 +59,7 @@ type ArakNet struct {
 	mtx      sync.Mutex
 
 	//Server Address
-	Address  string
+	Address string
 }
 
 //New creates a new ArakNet instance

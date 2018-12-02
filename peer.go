@@ -48,7 +48,7 @@ func (p *Peer) Run() {
 
 	decoder := json.NewDecoder(p.conn)
 
-	for  {
+	for {
 
 		message := &Message{}
 		err := decoder.Decode(message)
